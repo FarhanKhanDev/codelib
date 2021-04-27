@@ -1,0 +1,19 @@
+/*
+TODO:
+$cn = '2011101088';
+* change it to 20 1110 1088
+* usage: echo splitCnNumber($cn, [2,4,4]);
+*/
+
+$cn = '2011101088';
+echo splitCnNumber($cn, [2,4,4], $saperator='');
+
+function splitCnNumber(string $cn, array $breakPoints){
+    $start = 0;
+    $result = '';
+    foreach($breakPoints as $pick){
+        $result .= substr($cn, $start, $pick) . $saperator;
+        $start += $pick;
+    }
+    return $result .' ';
+}
